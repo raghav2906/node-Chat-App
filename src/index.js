@@ -51,13 +51,15 @@ io.on('connection', (socket) => {
             return callback('Profanity is not allowed')
         }
 
-        io.to(user.room).emit('message',generateMessage(user.username,message))
+        socket.emit('messageOwn',generateMessage(user.username,message))
+        socket.broadcast.to(user.room).emit('message',generateMessage(user.username,message))
         callback()
     }) 
 
     socket.on('sendLocation',(coords ,callback)=>{
         const user = getUser(socket.id)
-        io.to(user.room).emit('locationMessage',generateLocationMessage(user.username,`https://google.com/maps?q=${coords.latitude},${coords.longitude}`))
+        socket.emit('locationMessageOwn',generateLocationMessage(user.username,`https://google.com/maps?q=${coords.latitude},${coords.longitude}`))
+        socket.broadcast.to(user.room).emit('locationMessage',generateLocationMessage(user.username,`https://google.com/maps?q=${coords.latitude},${coords.longitude}`))
         callback()
     })
 

@@ -9,18 +9,26 @@ button{cursor:pointer;padding:12px;background:#7C5CBF;border:none;color:#fff;fon
 button:hover{background:#6b47b8}
 button:disabled{cursor:default;background:#7c5cbf94}
 .centered-form{background:#333744;width:100vw;height:100vh;display:flex;justify-content:center;align-items:center}
-.centered-form__box{box-shadow:0 0 17px 1px #1D1F26;background:#F7F7FA;padding:24px;width:250px}
+.centered-form__box{box-shadow:0 0 17px 1px #1D1F26;background:#F7F7FA;padding:24px;width:350px}
+.centered-form__box input:focus, input:hover{border:blue 1px solid; border-radius: 2px;}
+.centered-form__box label{color: #000;}
 .centered-form button{width:100%}.centered-form input{margin-bottom:16px;width:100%}.chat{display:flex}
 .chat__sidebar{height:100vh;color:#fff;background:#333744;width:225px;overflow-y:scroll}
-.chat__main{flex-grow:1;display:flex;flex-direction:column;max-height:100vh}
+.chat__main{flex-grow:1;display:flex;flex-direction:column;max-height:100vh;background-image: url('../img/bg.png');}
 .chat__messages{flex-grow:1;padding:24px 24px 0;overflow-y:scroll}
-.message{margin-bottom:16px}
-.message__name{font-weight:600;font-size:14px;margin-right:8px}
-.message__meta{color:#777;font-size:14px}
-.message a{color:#0070CC}
+.message{margin-bottom:16px;background-color: rgba(117, 117, 117, 0.479);border-radius: 8px;}
+.message-outer{margin-bottom:16px;background-color: rgba(136, 233, 177, 0.575);border-radius: 8px;}
+.message__name{font-weight:600;font-size:14px;margin-right:8px;padding-left: 5px;}
+.message__meta{color:rgb(104, 104, 104);font-size:14px;padding-left: 5px;}
+.message a{color:#1f517a;font-size: 1.3rem;font-style: italic;}
+.message a:hover{color: rgb(129, 106, 235);}
+.message_a{text-decoration: none;}
+.message-outer a{color:#1f517a;font-size: 1.3rem;font-style: italic;}
+.message-outer a:hover{color: rgb(129, 106, 235);}
+.message_a{text-decoration: none;}
 .compose{display:flex;flex-shrink:0;margin-top:16px;padding:24px}
 .compose form{display:flex;flex-grow:1;margin-right:16px}
-.compose input{border:1px solid #eee;width:100%;padding:12px;margin:0 16px 0 0;flex-grow:1}
+.compose input{border:1px solid #eee;width:100%;padding:12px;margin:0 16px 0 0;flex-grow:1;background-color: rgb(209, 209, 209);border-radius: 7px;}
 .compose button{font-size:14px}
 .room-title{font-weight:400;font-size:22px;background:#2c2f3a;padding:24px}
 .list-title{font-weight:500;font-size:18px;margin-bottom:4px;padding:12px 24px 0}
